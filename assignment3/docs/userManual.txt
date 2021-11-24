@@ -1,0 +1,50 @@
+User Manual
+
+Actions:
+
+-Operation 1: List All Items
+	1.On the top panel, click the "All" button
+		-At any time when the "All" button is pressed, all items will be displayed
+
+-Operation 2: Add a new item
+	1. Click the "Add" button on the bottom of the program
+		-the "Add" button will be in that spot no matter what screen is being displayed
+
+	2. A dropdown menu will appear; select either "Food Item" or "Drink Item"
+		-If at any time after selecting "Food Item" or "Drink Item" the user selects "Select an Item Type" 
+		 there will be fillable textfields available. However, attempting to submit an item under the "Select an Item Type"
+		 selection will throw an error and will not allow the user input to be added.
+
+	3. Fill in the corresponding information
+		-Everything except "Notes" needs to be filled
+		-Negative numbers will not be accepted
+	
+	4. Click the "Add Item" to add the item
+	
+	5. If at any time the user hits the "X" button or the "Cancel" button, the process will stop and nothing will be added
+
+-Operation 3: Remove an item
+	1. Click any method of listing the items via the row of buttons on the top panel
+	
+	2. The items will be listed and the user can click the "Remove" button of a panel to remove the corresponding item
+
+	3. The item will be removed and the view will be reset to the top of the scroll pane
+
+-Operation 4: List expired items
+	1.On the top panel, click the "Expired" button
+		-At any time when the "Expired" button is pressed, all expired items will be displayed
+
+-Operation 5: List items that are not expired
+	1.On the top panel, click the "Not Expired" button
+		-At any time when the "Not Expired" button is pressed, all non-expired items will be displayed
+
+-Operation 6: List items expiring in 7 days
+	1.On the top panel, click the "Expiring in 7 days" button
+		-At any time when the "Expiring in 7 days" button is pressed, all items expiring in 7 days will be displayed
+
+-Operation 7: Exit
+	1. On the very top right on the application, click the "X" button.
+		-it will flash red when you hover over it
+		-A JSON file corresponding to the items in the program will be automatically generated
+
+	2. The program will dispose of itself

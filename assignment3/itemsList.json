@@ -1,0 +1,18 @@
+[
+  {
+    "name": "poyo",
+    "notes": "a small poyo",
+    "price": 0.99,
+    "amount": 0.016,
+    "expiryDate": "2021-11-04T23:59:59",
+    "itemType": 1
+  },
+  {
+    "name": "water",
+    "notes": "sm water tastes like water",
+    "price": 0.0,
+    "amount": 9.0,
+    "expiryDate": "2021-11-30T23:59:59",
+    "itemType": 2
+  }
+]
