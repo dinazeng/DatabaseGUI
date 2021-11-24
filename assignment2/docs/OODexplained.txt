@@ -1,0 +1,47 @@
+Use Case #1: Reading in a Json file containing the Consumable items list
+	1. The itemsList.JSON file will be read in main() where readJson() will be called into an ArrayList
+	2. The items will be redefined in accordance to its item type
+		-items with item type 0 will remain as Consumable objects
+		-items with item type 1 will be redefined as FoodItem objects
+		-items with item type 2 will be redefined as DrinkItem objects
+	3. when application is running, the items read will now print the correct information according to its class type
+
+
+	The process is dependent upon the following classes/methods: ConsumablesTracker (main function), ReadWriteFiles (readJson()), consumableFactory (fixType()), Consumable/FoodItem/DrinkItem
+	 
+	ConsumablesTracker is responsible for calling the read file function and storing the items
+	ReadWriteFiles is responsible for reading in the JSON file
+	ConsumableFactory is responsible for identifying the Consumable object type and creating a new Consumable object in accordance to its type
+	Consumable/FoodItem/DrinkItem is responsible for containing the item type and the object information
+
+	Through OOD, each class is able to execute its responsibility and depend on other classes for their functionality. All classes are highly concise and cohesive.
+	
+	This is the best method of reading in a JSON file. The items that are inputted and stored in the ArrayList<Consumable> object retain all their information even after the user restarts the program.
+	There is not much memory being used as the only extra attribute is an int that will store the item type. The toString() method in the Consumable/FoodItem/DrinkItem classes will handle printing that information correctly.
+
+Use Case #2: Adding a new Consumable object to the Consumable List
+	1. The itemsList.JSON file will be read in main() where readJson() will be called into an ArrayList
+	2. The items will be redefined in accordance to its item type
+		-items with item type 0 will remain as Consumable objects
+		-items with item type 1 will be redefined as FoodItem objects
+		-items with item type 2 will be redefined as DrinkItem objects
+	3. The menu will be printed and the user will be prompted to choose an option on what they would like to do
+	4. If the user chooses to add an item (2) then the process to create a new Consumable object will begin
+	5. If at any point the user enters an invalid response of the required input type (entering String when doubles are asked does not count) the system prompts the user for a valid response until the program ends or a valid response is inputted
+		-In the case of an invalid day the whole expiry date will be reprompted (year/month will only ask for another year/month respectively)
+	6. The new Consumable object is created and added to its correct location in the ArrayList using selection sort 
+
+	The process is dependent upon the following classes/methods: ConsumablesTracker (main function), ReadWriteFiles (readJson()), consumableFactory (getInstance() + fixType()), Consumable/FoodItem/DrinkItem, ConsumableOptions (multiple functions)
+	
+	ConsumablesTracker is responsible for calling the read file function, ConsumableOptions, and storing the list of items
+	ReadWriteFiles is responsible for reading in the JSON file
+	ConsumableFactory is responsible for identifying the Consumable object type and creating a new Consumable object in accordance to its type
+		-When add an item is prompted for the getInstance() method is used to create the correct Consumable object 
+	Consumable/FoodItem/DrinkItem is responsible for containing the item type and the object information
+
+	Through OOD, each class is able to execute its responsibility and depend on other classes for their functionality. All classes are highly concise and cohesive.
+	
+	This is the best method of adding a new item to the list. While loops + a Try/Catch block are used when the user enters information about the item to ensure that the data that they enter is correct.
+	The Try/Catch block in particular, catches DateTimeException instances when a LocalDate.of(int, int, int) is invalid. This will ensure that the date the user tries to input at the very least exists.
+	Selection sort is used to sort the list as it is simplistic. Also, the user is prompted to specify if the item being added is a FoodItem or DrinkItem instance. In doing so, the item's type will be set
+	accordingly and always be saved as the correct class type; its data will always be what the use inputted.
